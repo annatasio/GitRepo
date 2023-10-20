@@ -9,6 +9,6 @@ public class Main {
 		System.out.println("Leader of the team:");
 		System.out.println("Anna Tasiopoulou");
 		System.out.println();
-		System.out.println("Members of the tea:");
+		System.out.println("Members of the team:");
 	}
 }
