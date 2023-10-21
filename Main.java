@@ -10,5 +10,6 @@ public class Main {
 		System.out.println("Anna Tasiopoulou");
 		System.out.println();
 		System.out.println("Members of the team: ");
+		System.out.println();
 	}
 }
