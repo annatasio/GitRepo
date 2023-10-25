@@ -14,5 +14,6 @@ public class Main {
 		System.out.println("Georgia Papagianni, 8220115");
 		System.out.println("Ioannis Varelis, 8220009");
 		System.out.println("Alexis Barklesias, 8190304");
+		System.out.println("Konstantinos Lekkas, 8220077");
 	}
 }
