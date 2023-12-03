@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 /**Here is a simple application that connects with docker deamon and manages docker containers.
  * A user can start or stop a container, see the state of it and also can get the statistics of a container
+ * Author: Anna Tasiopoulou 8220147
  */
 
 public class Main2 {

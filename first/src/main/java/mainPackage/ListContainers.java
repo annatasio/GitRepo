@@ -7,7 +7,9 @@ import com.github.dockerjava.api.DockerClient;
 
 public class ListContainers {
 
-    /**A method that lists all containers of docker engine */
+    /**A method that lists all containers of docker engine
+     * Author: Anna Tasiopoulou 8220147
+     */
 
     public void list(DockerClient dockerClient, List<Container> containers) {
 

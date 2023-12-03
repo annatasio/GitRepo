@@ -9,6 +9,7 @@ import com.github.dockerjava.api.command.InspectContainerCmd;
 import com.github.dockerjava.api.command.InspectContainerResponse.ContainerState;
 
 /**A class for start or stop a docker container 
+ * Author: Psaltopoulos Antonis 8220170
  */
 
 public class Dockerpr {
