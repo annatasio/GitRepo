@@ -51,7 +51,7 @@ public class Main2 {
                 case 1:
                 
                 // List all containers
-                ListContainers l = new ListContainers();
+                Containers l = new Containers();
                 l.list(dockerClient, containers);
 
                 break;
@@ -61,15 +61,7 @@ public class Main2 {
                 System.out.println("Please give the id of the container you want to start");
                 String id = sc1.nextLine();
 
-
-                boolean isRunning = false;
-                for (Container container : containers) {
-                    if (container.getId().equals(id)) {
-                        isRunning = container.getState().equalsIgnoreCase("running");
-                        break;
-                    }
-                }
-
+                boolean isRunning = Containers.checkAlive(id);
                 if (isRunning) {System.out.println("The container is already running");
 
                 } else {
@@ -86,14 +78,7 @@ public class Main2 {
                 System.out.println("Please give the id of the container you want to stop");
                 String id2 = sc1.nextLine();
 
-                boolean isRunning2 = false;
-                for (Container container : containers) {
-                    if (container.getId().equals(id2)) {
-                        isRunning2 = container.getState().equalsIgnoreCase("running");
-                        break;
-                    }
-                }
-
+                boolean isRunning2 = Containers.checkAlive(id2);
                 if (isRunning2==false) {System.out.println("The container is already stoped");
 
                 } else {
@@ -108,9 +93,7 @@ public class Main2 {
                 case 4:
 
                 System.out.println("Please give the id of the container you want to check");
-
                 String id3 = sc1.nextLine();
-
                 Dockerpr dp3 = new Dockerpr(id3, dockerClient);
                 dp3.checkState(dockerClient, id3);
 
@@ -139,6 +122,7 @@ public class Main2 {
 
                 break;
             }
+
         } while (x != 0);
 
         // Close the Docker client

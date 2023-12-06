@@ -47,12 +47,7 @@ public class Dockerpr {
         public void meth1() {
             
             executorService = Executors.newFixedThreadPool(3);
-
             executorService.execute(() -> startContainer(dc, ip));
-
-            //executorService.execute(() -> startContainer(dockerClient, "d6370c6f907f"));
-            //executorService.execute(() -> startContainer(dockerClient, "d78c7f20cc37"));
-
             executorService.shutdown();
 
             try {
@@ -67,12 +62,7 @@ public class Dockerpr {
         public void meth2() {
 
             executorService = Executors.newFixedThreadPool(3);
-
             executorService.execute(() -> stopContainer(dc, ip));
-
-            //executorService.execute(() -> stopContainer(dockerClient, "d6370c6f907f"));
-            //executorService.execute(() -> stopContainer(dockerClient, "d78c7f20cc37"));
-
             executorService.shutdown();
 
             try {
@@ -101,9 +91,7 @@ public class Dockerpr {
     public void checkState (DockerClient dockerClient, String containerID) {
 
         InspectContainerCmd container = dockerClient.inspectContainerCmd(containerID);
-
         ContainerState state = container.exec().getState();
-
         System.out.println(state.toString());
     }
 
