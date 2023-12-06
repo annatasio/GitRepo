@@ -39,11 +39,10 @@ public class Main2 {
             "You can start or stop a container, see the state of it and also can get the statistics of a container****");
 
         do {
-
-            System.out.println("Please select a number bwetween 0-5 depending on the procces you want");
-            System.out.println("0: Exit programm\n 1: Display all Containers\n 2: Start a Container\n" +
-            "3: Stop a Container\n 4:Status of a Container\n 5: Statistics of a Container\n");
-
+            System.out.println("Please select a number between 0-5 depending on the process you want");
+            System.out.println("0: Exit program\n1: Display all Containers\n2: Start a Container\n" +
+                    "3: Stop a Container\n4: Status of a Container\n5: Statistics of a Container\n");
+                    
             x = sc.nextInt();
 
             switch (x) {
