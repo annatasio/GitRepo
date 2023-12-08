@@ -107,6 +107,8 @@ public class Main2 {
                 System.out.println("Edge Count: " + topology.getEdgeCount());
                 topology.stats(dockerClient);
 
+                DBThread.insertDockerInfoIntoDatabase(dockerClient);
+
                 break;
 
                 case 0:
