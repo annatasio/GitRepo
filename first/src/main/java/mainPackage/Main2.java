@@ -41,7 +41,7 @@ public class Main2 {
         do {
             System.out.println("Please select a number between 0-5 depending on the process you want");
             System.out.println("0: Exit program\n1: Display all Containers\n2: Start a Container\n" +
-                    "3: Stop a Container\n4: Status of a Container\n5: Statistics of a Container\n");
+                    "3: Stop a Container\n4: Status of a Container\n5: Statistics of a Container\n6: Metrics Id, Started and Stoped Containers\n");
                     
             x = sc.nextInt();
 
@@ -108,6 +108,20 @@ public class Main2 {
                 topology.stats(dockerClient);
 
                 DBThread.insertDockerInfoIntoDatabase(dockerClient);
+
+                break;
+
+                case 6:
+
+                System.out.println("Please give a date");
+                String date = sc1.nextLine();
+                SQLServerRESTClient sql1 = new SQLServerRESTClient();
+
+                try {
+                sql1.getMetricIdStartsStops(date);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
                 break;
 

@@ -23,11 +23,12 @@ public class DBThread {
     public static void insertDockerInfoIntoDatabase(DockerClient dockerClient) {
 
         // Database connection details
-        String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=demo;trustServerCertificate=true";
-        String user = "testLogin";
-        String password = "1234";
+        String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=demo1;integratedSecurity=true;"  +
+                "encrypt=true;trustServerCertificate=true";
+        //String user = "testLogin";
+        //String password = "1234";
 
-        try (Connection connection = DriverManager.getConnection(dbURL, user, password)) {
+        try (Connection connection = DriverManager.getConnection(dbURL)) {
             // Insert a metrics entry into the MetricsTable and retrieve its ID
             int metricsId = insertMetricsEntry(connection);
 
