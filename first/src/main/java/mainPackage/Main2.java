@@ -115,10 +115,10 @@ public class Main2 {
 
                 System.out.println("Please give a date");
                 String date = sc1.nextLine();
-                SQLServerRESTClient sql1 = new SQLServerRESTClient();
+                SQLServerRESTClient sql1 = new SQLServerRESTClient(date);
 
                 try {
-                sql1.getMetricIdStartsStops(date);
+                sql1.getMetricIdStartsStops();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

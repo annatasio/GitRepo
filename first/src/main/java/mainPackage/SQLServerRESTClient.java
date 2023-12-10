@@ -16,9 +16,15 @@ import com.sun.net.httpserver.HttpServer;
 
 public class SQLServerRESTClient {
 
-    public void getMetricIdStartsStops(String date) throws Exception {
+    protected static String date;
 
-        boolean exists = checkIfDateExists(date);
+    public SQLServerRESTClient(String date1) {
+        date = date1;
+    }
+
+    public void getMetricIdStartsStops() throws Exception {
+
+        boolean exists = checkIfDateExists();
 
         if (exists) {
 
@@ -46,16 +52,20 @@ public class SQLServerRESTClient {
         public void handle(HttpExchange exchange) throws IOException {
             if ("GET".equals(exchange.getRequestMethod())) {
                 // Set up database connection parameters
-                String url = "jdbc:sqlserver://localhost:1433;databaseName=demo;integratedSecurity=true;"  +
+                String url = "jdbc:sqlserver://localhost:1433;databaseName=demo1;integratedSecurity=true;"  +
                 "encrypt=true;trustServerCertificate=true";
 
                 try {
                     // Establish database connection
                     Connection connection = DriverManager.getConnection(url);
-                    Statement statement = connection.createStatement();
+                    PreparedStatement statement = null;
+                    ResultSet resultSet = null;
 
                     // Execute SQL query
-                    ResultSet resultSet = statement.executeQuery("SELECT id, start_containers, stop_containers FROM MetricsTable");
+                    String sql1 = "SELECT id, start_containers, stop_containers FROM MetricsTable WHERE measurement_date = ?";
+                    statement = connection.prepareStatement(sql1);
+                    statement.setString(1, SQLServerRESTClient.date);
+                    resultSet = statement.executeQuery();
 
                     // Prepare response
                     StringBuilder response = new StringBuilder();
@@ -98,11 +108,11 @@ public class SQLServerRESTClient {
 
     }
 
-    public boolean checkIfDateExists(String providedDate) {
+    public boolean checkIfDateExists() {
         boolean dateExists = false;
 
         // Database connection parameters
-        String url = "jdbc:sqlserver://localhost:1433;databaseName=demo;integratedSecurity=true;"  +
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=demo1;integratedSecurity=true;"  +
                 "encrypt=true;trustServerCertificate=true";
 
 
@@ -117,7 +127,7 @@ public class SQLServerRESTClient {
             // SQL query to check if the provided username exists in the 'username' column
             String sql = "SELECT measurement_date FROM MetricsTable WHERE measurement_date = ?";
             statement = connection.prepareStatement(sql);
-            statement.setString(1, providedDate);
+            statement.setString(1, date);
 
             // Execute the query
             resultSet = statement.executeQuery();
