@@ -23,7 +23,7 @@ public class DBThread {
     public static void insertDockerInfoIntoDatabase(DockerClient dockerClient) {
 
         // Database connection details
-        String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=demo1;integratedSecurity=true;"  +
+        String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=demo;integratedSecurity=true;"  +
                 "encrypt=true;trustServerCertificate=true";
         //String user = "testLogin";
         //String password = "1234";

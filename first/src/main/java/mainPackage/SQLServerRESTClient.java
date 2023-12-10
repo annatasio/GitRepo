@@ -46,7 +46,7 @@ public class SQLServerRESTClient {
         public void handle(HttpExchange exchange) throws IOException {
             if ("GET".equals(exchange.getRequestMethod())) {
                 // Set up database connection parameters
-                String url = "jdbc:sqlserver://localhost:1433;databaseName=demo1;integratedSecurity=true;"  +
+                String url = "jdbc:sqlserver://localhost:1433;databaseName=demo;integratedSecurity=true;"  +
                 "encrypt=true;trustServerCertificate=true";
 
                 try {
@@ -102,7 +102,7 @@ public class SQLServerRESTClient {
         boolean dateExists = false;
 
         // Database connection parameters
-        String url = "jdbc:sqlserver://localhost:1433;databaseName=demo1;integratedSecurity=true;"  +
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=demo;integratedSecurity=true;"  +
                 "encrypt=true;trustServerCertificate=true";
 
 
