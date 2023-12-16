@@ -1,6 +1,7 @@
 package mainPackage;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import com.github.dockerjava.api.model.Container;
 import com.github.dockerjava.api.DockerClient;
@@ -15,7 +16,7 @@ public class Containers {
      * Author: Anna Tasiopoulou 8220147
      */
 
-    public void list(DockerClient dockerClient, List<Container> containers) {
+     public void list(DockerClient dockerClient, List<Container> containers) {
 
         // List all containers
 

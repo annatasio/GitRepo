@@ -1,4 +1,4 @@
-USE demo;
+USE demo1;
 
 -- Delete all records from the MetricsTable
 DELETE FROM MetricsTable;
