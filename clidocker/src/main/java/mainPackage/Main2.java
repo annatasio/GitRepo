@@ -41,7 +41,7 @@ public class Main2 {
         do {
             System.out.println("Please select a number between 0-5 depending on the process you want");
             System.out.println("0: Exit program\n1: Display all Containers\n2: Start a Container\n" +
-                    "3: Stop a Container\n4: Status of a Container\n5: Statistics of a Container\n6: Metrics Id, Started and Stoped Containers\n7: Restart a Container\n");
+                    "3: Stop a Container\n4: Status of a Container\n5: Statistics of a Container\n6: Metrics Id, Started and Stoped Containers\n");
                     
             x = sc.nextInt();
 
@@ -121,22 +121,6 @@ public class Main2 {
                 sql1.getMetricIdStartsStops();
                 } catch (Exception e) {
                     e.printStackTrace();
-                }
-
-                break;
-
-                case 7:
-
-                System.out.println("Please give the id of the container you want to restart");
-                String id4 = sc1.nextLine();
-
-                boolean isRunning3 = Containers.checkAlive(id4);
-                if (isRunning3==false) {System.out.println("The container is stoped\nTry again");
-
-                } else {
-                    
-                    RestartContainer.restartDockerContainer(id4);
-                    System.out.println("The container has been restarted");
                 }
 
                 break;

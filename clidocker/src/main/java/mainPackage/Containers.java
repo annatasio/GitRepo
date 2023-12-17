@@ -1,7 +1,6 @@
 package mainPackage;
 
 import java.util.List;
-import java.util.ArrayList;
 
 import com.github.dockerjava.api.model.Container;
 import com.github.dockerjava.api.DockerClient;
