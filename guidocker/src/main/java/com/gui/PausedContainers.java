@@ -43,7 +43,7 @@ public class PausedContainers {
                     String id = containerObject.getString("Id");
                     String image = containerObject.getString("Image");
 
-                    System.out.println("Container Name: " + name);
+                    System.out.println("Container's Name: " + name);
                     System.out.println("Container ID: " + id);
                     System.out.println("Container Image: " + image);
                 }
