@@ -14,7 +14,7 @@ public class PausedContainers {
 
     private static final String DOCKER_API_URL = "http://localhost:2375"; // Replace with your Docker API URL
 
-    public static void pausedContainers(String[] args) {
+    public static void pausedContainers() {
         try {
             // Docker Remote API endpoint to give started containers
             String endpoint = DOCKER_API_URL + "/containers/json?filters={\"status\":[\"paused\"]}";
