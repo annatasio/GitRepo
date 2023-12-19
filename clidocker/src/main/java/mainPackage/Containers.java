@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 public class Containers {
 
     /**A method that lists all containers of docker engine
-     * Author: Anna Tasiopoulou 8220147
+     * Author: Anna Tasiopoulou 8220147 @param dockerClient, @param containers
      */
 
      public void list(DockerClient dockerClient, List<Container> containers) {
@@ -35,12 +35,12 @@ public class Containers {
     /**Checking if a docker Container is running or not */
 
     public static boolean checkAlive(String containerId) {
-        System.out.println("Checking the container "+containerId);
-        Process p = runCommand("docker inspect -f {{.State.Running}} "+containerId);
+        System.out.println("Checking the container " + containerId);
+        Process p = runCommand("docker inspect -f {{.State.Running}} "+ containerId);
         return readCommandResult(p);
     }
     
-    private static Process runCommand(String command){
+    private static Process runCommand(String command) {
         Process p = null;
         String[] words = command.split("\\s+");
         try {
@@ -51,7 +51,7 @@ public class Containers {
         return p;
     }
 
-    private static boolean readCommandResult(Process proc){
+    private static boolean readCommandResult(Process proc) {
         String s;
         boolean result = false;
         try {
@@ -66,17 +66,17 @@ public class Containers {
             }
             // read the output from the command
             while ((s = stdInput.readLine()) != null) {
-                System.out.println("Container is working: "+s);
-                if(s.equalsIgnoreCase("true") || s.equalsIgnoreCase("false"))
+                System.out.println("Container is working: "+ s);
+                if (s.equalsIgnoreCase("true") || s.equalsIgnoreCase("false")) {
                     result = Boolean.parseBoolean(s);
+                }
             }
             // read any errors from the attempted command
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
                 result = false;
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return result;

@@ -12,20 +12,23 @@ import java.util.List;
  */
 
 public class DockerStatistics {
+    /**Variables for statistics */
     private int nodeCount;
     private int edgeCount;
  
+    /**Initializing variables */
     public DockerStatistics() {
         this.nodeCount = 0;
         this.edgeCount = 0;
     }
 
-    /**A method which calculates Node and Edge counts */
+    /**A method which calculates Node and Edge counts @param containers */
     public void updateStatistics(List<Container> containers) {
         this.nodeCount = containers.size();
         this.edgeCount = calculateEdgeCount(containers);
     }
  
+    /**Method that calculates edge count @param containers */
     public int calculateEdgeCount(List<Container> containers) {
         // For demonstration, using a simple logic (sum of lengths of container IDs)
         int totalLength = 0;
@@ -44,7 +47,7 @@ public class DockerStatistics {
     }
 
 
-    /**A method which takes statistics of running docker containers */
+    /**A method which takes statistics of running docker containers @param dockerClient */
     public void stats(DockerClient dockerClient) {
 
         try {
@@ -79,6 +82,6 @@ public class DockerStatistics {
             e.printStackTrace();
         }
     }
-
 }
+
  

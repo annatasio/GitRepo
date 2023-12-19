@@ -6,8 +6,10 @@ import java.net.URL;
 
 public class RestartContainer {
 
+    /**Final variable that exposes docker daemon*/
     private static final String DOCKER_API_URL = "http://localhost:2375"; // Replace with your Docker API URL
 
+    /**Method that restarts a docker containet using http POST method*/
     public static void restartDockerContainer(String id) {
         try {
             // Docker Remote API endpoint to restart a container

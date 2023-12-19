@@ -16,6 +16,8 @@ import java.util.Scanner;
  */
 
 public class Main2 {
+
+    /**Main method that runs the cli app */
     public static void main(String[] args) {
         // Set up Docker client configuration
         DockerClientConfig config = DefaultDockerClientConfig.createDefaultConfigBuilder()
@@ -35,13 +37,13 @@ public class Main2 {
 
         int x;
 
-         System.out.println("****Here is a simple application that connects with docker deamon and manages docker containers.\n" + 
-            "You can start or stop a container, see the state of it and also can get the statistics of a container****");
+         System.out.println("****Here is a simple application that connects with docker deamon and manages docker containers.\n"
+            + "You can start or stop a container, see the state of it and also can get the statistics of a container****");
 
         do {
             System.out.println("Please select a number between 0-5 depending on the process you want");
-            System.out.println("0: Exit program\n1: Display all Containers\n2: Start a Container\n" +
-                    "3: Stop a Container\n4: Status of a Container\n5: Statistics of a Container\n6: Metrics Id, Started and Stoped Containers\n");
+            System.out.println("0: Exit program\n1: Display all Containers\n2: Start a Container\n"
+                    + "3: Stop a Container\n4: Status of a Container\n5: Statistics of a Container\n6: Metrics Id, Started and Stoped Containers\n");
                     
             x = sc.nextInt();
 
@@ -61,7 +63,8 @@ public class Main2 {
                 String id = sc1.nextLine();
 
                 boolean isRunning = Containers.checkAlive(id);
-                if (isRunning) {System.out.println("The container is already running");
+                if (isRunning) {
+                    System.out.println("The container is already running");
 
                 } else {
                     
@@ -78,7 +81,8 @@ public class Main2 {
                 String id2 = sc1.nextLine();
 
                 boolean isRunning2 = Containers.checkAlive(id2);
-                if (isRunning2==false) {System.out.println("The container is already stoped");
+                if (isRunning2 == false) {
+                    System.out.println("The container is already stoped");
 
                 } else {
                     

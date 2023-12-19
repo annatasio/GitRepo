@@ -11,9 +11,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class RunningContainers {
-    
+
+    /**Final variable that exposes docker daemon*/
     private static final String DOCKER_API_URL = "http://localhost:2375"; // Replace with your Docker API URL
 
+    /**Method that returns all running docker containers using http GET method */
     public static void runningContainers() {
         try {
             // Docker Remote API endpoint to give started containers

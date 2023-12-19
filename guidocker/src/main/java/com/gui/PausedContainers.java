@@ -12,8 +12,10 @@ import org.json.JSONObject;
 
 public class PausedContainers {
 
+    /**Final variable that exposes docker daemon*/
     private static final String DOCKER_API_URL = "http://localhost:2375"; // Replace with your Docker API URL
 
+    /**Method that show all the paused docker containers via http request */
     public static void pausedContainers() {
         try {
             // Docker Remote API endpoint to give started containers
@@ -57,5 +59,4 @@ public class PausedContainers {
             e.printStackTrace();
         }
     }
-    
 }

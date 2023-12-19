@@ -14,11 +14,11 @@ import com.github.dockerjava.api.command.InspectContainerResponse.ContainerState
 
 public class Dockerpr {
 
-        ExecutorService executorService;
+        private ExecutorService executorService;
         private DockerClient dc;
         private String ip;
 
-        public Dockerpr(String ip, DockerClient dc){
+        public Dockerpr(String ip, DockerClient dc) {
 
             this.ip = ip;
             this.dc = dc;
@@ -44,6 +44,7 @@ public class Dockerpr {
             return dc;
         }
 
+        /**Executor thread for starting a container */
         public void meth1() {
             
             executorService = Executors.newFixedThreadPool(3);
@@ -59,6 +60,7 @@ public class Dockerpr {
             }
         }
 
+        /**Executor thread for stoping a container*/
         public void meth2() {
 
             executorService = Executors.newFixedThreadPool(3);
@@ -75,25 +77,25 @@ public class Dockerpr {
         }
 
         
-    /**Method that starts a container */
+    /**Method that starts a container @param doc, @param idd */
 
     public static void startContainer(DockerClient doc, String idd) {
         doc.startContainerCmd(idd).exec();
     }
 
-    /**Method that stops a container */
+    /**Method that stops a container @param dockerClient, @param containerID */
     public static void stopContainer(DockerClient dockerClient, String ContainerID) {
         dockerClient.stopContainerCmd(ContainerID).exec();
     }
 
 
-    /**Method that checks the state of a container */
+    /**Method that checks the state of a container @param dockerClient, @param containerID */
     public void checkState (DockerClient dockerClient, String containerID) {
 
         InspectContainerCmd container = dockerClient.inspectContainerCmd(containerID);
         ContainerState state = container.exec().getState();
         System.out.println(state.toString());
     }
-
 }  
+
 

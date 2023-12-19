@@ -1,5 +1,6 @@
 package com.gui;
 
+/**Project guidocker*/
 import javax.swing.*;
 import java.awt.*;
 import java.io.BufferedReader;
@@ -13,6 +14,10 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+/**This is the main class that runs the GUI App. A User can have interaction
+ * with their docker containers and execute simple tasks like restarting a container.
+ */
 
 public class DockerDesktopApp extends JFrame {
 
@@ -35,7 +40,7 @@ public class DockerDesktopApp extends JFrame {
         panel.add(titleLabel, BorderLayout.NORTH);
 
         JPanel buttonPanel = new JPanel();
-        buttonPanel.add(startButton,BorderLayout.CENTER);
+        buttonPanel.add(startButton, BorderLayout.CENTER);
 
         panel.add(buttonPanel, BorderLayout.CENTER);
 
@@ -89,7 +94,8 @@ public class DockerDesktopApp extends JFrame {
             }
         }
     }
-
+    
+    /**Main method that runs the app */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             new DockerDesktopApp();
@@ -126,7 +132,7 @@ public class DockerDesktopApp extends JFrame {
                     containerNames.add(name);
                     }
                 }
-                } catch(JSONException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             } else {
@@ -167,7 +173,7 @@ public class DockerDesktopApp extends JFrame {
                     String id = container.getString("Id");
                     containerId.add(id);
                 }
-                } catch(JSONException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             } else {

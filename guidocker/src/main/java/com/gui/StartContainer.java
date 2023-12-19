@@ -6,8 +6,10 @@ import java.net.URL;
 
 public class StartContainer {
 
-    private static final String DOCKER_API_URL = "http://localhost:2375"; // Αντικαταστήστε με το Docker API URL σας
+    /**Final variable that exposes docker daemon*/
+    private static final String DOCKER_API_URL = "http://localhost:2375"; // Replace with your Docker API URL
 
+    /**Method that starts a docker containet using http POST method*/
     public static void startDockerContainer(String id) {
         try {
             // Docker Remote API endpoint to start a container
@@ -17,7 +19,7 @@ public class StartContainer {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
 
-            // Αποστολή του αιτήματος για το ξεκίνημα του container
+            // Send the request to restart the container
             int responseCode = connection.getResponseCode();
 
             if (responseCode == HttpURLConnection.HTTP_NO_CONTENT) {

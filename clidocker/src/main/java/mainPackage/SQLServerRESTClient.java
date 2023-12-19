@@ -17,10 +17,12 @@ public class SQLServerRESTClient {
 
     protected static String date;
 
+    /**Initializing variable date */
     public SQLServerRESTClient(String date1) {
         date = date1;
     }
 
+    /**A method that takes the metric id from the database */
     public void getMetricIdStartsStops() throws Exception {
 
         boolean exists = checkIfDateExists();
@@ -51,8 +53,8 @@ public class SQLServerRESTClient {
         public void handle(HttpExchange exchange) throws IOException {
             if ("GET".equals(exchange.getRequestMethod())) {
                 // Set up database connection parameters
-                String url = "jdbc:sqlserver://localhost:1433;databaseName=demo1;integratedSecurity=true;"  +
-                "encrypt=true;trustServerCertificate=true";
+                String url = "jdbc:sqlserver://localhost:1433;databaseName=demo1;integratedSecurity=true;"
+                + "encrypt=true;trustServerCertificate=true";
 
                 try {
                     // Establish database connection
@@ -99,6 +101,7 @@ public class SQLServerRESTClient {
         }
     }
 
+    /**Method that stops connection with the server */
     public static void stopServer(HttpServer server) {
         if (server != null) {
             server.stop(0); // Gracefully stop the server
@@ -107,12 +110,13 @@ public class SQLServerRESTClient {
 
     }
 
+    /**Method that checks if the date that the user gave exists */
     public boolean checkIfDateExists() {
         boolean dateExists = false;
 
         // Database connection parameters
-        String url = "jdbc:sqlserver://localhost:1433;databaseName=demo1;integratedSecurity=true;"  +
-                "encrypt=true;trustServerCertificate=true";
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=demo1;integratedSecurity=true;"
+               + "encrypt=true;trustServerCertificate=true";
 
 
         Connection connection = null;
@@ -158,4 +162,5 @@ public class SQLServerRESTClient {
         return dateExists;
     }
 }
+
 
