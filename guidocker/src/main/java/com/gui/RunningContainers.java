@@ -1,5 +1,7 @@
 package com.gui;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,7 +18,9 @@ public class RunningContainers {
     private static final String DOCKER_API_URL = "http://localhost:2375"; // Replace with your Docker API URL
 
     /**Method that returns all running docker containers using http GET method */
-    public static void runningContainers() {
+    public static List<String> runningContainers() {
+        List<String> containersInfo =  new ArrayList<>();
+
         try {
             // Docker Remote API endpoint to give started containers
             String endpoint = DOCKER_API_URL + "/containers/json";
@@ -45,9 +49,11 @@ public class RunningContainers {
                     String id = containerObject.getString("Id");
                     String image = containerObject.getString("Image");
 
-                    System.out.println("Container Name: " + name);
-                    System.out.println("Container ID: " + id);
-                    System.out.println("Container Image: " + image);
+                    String containerInfo = "Container Name: " + name + "\n"
+                                + "Container ID: " + id + "\n"
+                                + "Container Image: " + image;
+
+                    containersInfo.add(containerInfo);
                 }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -58,5 +64,8 @@ public class RunningContainers {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return containersInfo;
     }
 }
+

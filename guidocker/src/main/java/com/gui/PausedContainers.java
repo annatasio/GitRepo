@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
+import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,7 +18,8 @@ public class PausedContainers {
     private static final String DOCKER_API_URL = "http://localhost:2375"; // Replace with your Docker API URL
 
     /**Method that show all the paused docker containers via http request */
-    public static void pausedContainers() {
+    public static List<String> pausedContainers() {
+        List<String> containersInfo =  new ArrayList<>();
         try {
             // Docker Remote API endpoint to give started containers
             String endpoint = DOCKER_API_URL + "/containers/json?filters={\"status\":[\"paused\"]}";
@@ -45,9 +48,11 @@ public class PausedContainers {
                     String id = containerObject.getString("Id");
                     String image = containerObject.getString("Image");
 
-                    System.out.println("Container Name: " + name);
-                    System.out.println("Container ID: " + id);
-                    System.out.println("Container Image: " + image);
+                    String containerInfo = "Container Name: " + name + "\n"
+                                + "Container ID: " + id + "\n"
+                                + "Container Image: " + image;
+
+                    containersInfo.add(containerInfo);
                 }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -58,5 +63,7 @@ public class PausedContainers {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return containersInfo;
     }
 }

@@ -171,7 +171,7 @@ public class DockerDesktopApp extends JFrame {
      * can give status running and element id and the method will return the Id's of all running containers 
      * in their localhost.
      */
-    private List<String> getContainersByStatus(String status, String element) {
+    public static List<String> getContainersByStatus(String status, String element) {
         List<String> containerInfo = new ArrayList<>();
 
         try {
