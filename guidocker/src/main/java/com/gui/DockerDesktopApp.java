@@ -21,6 +21,13 @@ import org.json.JSONObject;
 
 public class DockerDesktopApp extends JFrame {
 
+    /**Final Variables that describe the status of a docker container and the name and the id. */
+    private static final String DOCKER_PAUSED = "paused";
+    private static final String DOCKER_RUNNING = "running";
+    private static final String DOCKER_EXITING = "exited";
+    private static final String DOCKER_NAMES = "Names";
+    private static final String DOCKER_ID = "Id";
+
     public DockerDesktopApp() {
 
         setTitle("Docker Desktop App");
@@ -50,6 +57,7 @@ public class DockerDesktopApp extends JFrame {
         setVisible(true);
     }
 
+    /**The method build up the application. Shows the menu to the user. */
     private void showMenu() {
         String[] choices = {"Show All Running Containers", "Show All Paused Containers", "Stop a Container", "Restart a Container", "Start a Container"};
 
@@ -64,8 +72,10 @@ public class DockerDesktopApp extends JFrame {
 
         if (selectedChoice != null) {
             if (selectedChoice.equals("Restart a Container")) {
-                List<String> containerNames = getContainerNames(); // Fetch container names
-                List<String> containerId = getContainerId();
+                List<String> containerNames = getContainersByStatus(DOCKER_RUNNING, DOCKER_NAMES); // Fetch container names
+                List<String> containerId = getContainersByStatus(DOCKER_RUNNING, DOCKER_ID);
+                containerNames.addAll(getContainersByStatus(DOCKER_PAUSED, DOCKER_NAMES));
+                containerId.addAll(getContainersByStatus(DOCKER_PAUSED, DOCKER_ID));
 
                 if (!containerNames.isEmpty()) {
                     String selectedContainer = (String) JOptionPane.showInputDialog(
@@ -89,8 +99,63 @@ public class DockerDesktopApp extends JFrame {
                 } else {
                     JOptionPane.showMessageDialog(this, "No running or paused containers found.");
                 }
+            
+            } else if (selectedChoice.equals("Start a Container")) {
+                List<String> containerNames = getContainersByStatus(DOCKER_EXITING, DOCKER_NAMES); // Fetch container names
+                List<String> containerId = getContainersByStatus(DOCKER_EXITING, DOCKER_ID);
+                containerNames.addAll(getContainersByStatus(DOCKER_PAUSED, DOCKER_NAMES));
+                containerId.addAll(getContainersByStatus(DOCKER_PAUSED, DOCKER_ID));
+
+                if (!containerNames.isEmpty()) {
+                    String selectedContainer = (String) JOptionPane.showInputDialog(
+                            this,
+                            "Choose a container to start:",
+                            "Select Container",
+                            JOptionPane.PLAIN_MESSAGE,
+                            null,
+                            containerNames.toArray(new String[0]),
+                            containerNames.get(0));
+                        
+    
+                    int selectedIndex = containerNames.indexOf(selectedContainer);
+                    if (selectedIndex != -1 && !containerNames.isEmpty() && !containerId.isEmpty()) {
+                        String selectedContainerId = containerId.get(selectedIndex);
+                        StartContainer.startDockerContainer(selectedContainerId);
+                        JOptionPane.showMessageDialog(this, "Starting container: " + selectedContainer);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Container ID not found for the selected container.");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "No stoped containers found.");
+                }
+            } else if (selectedChoice.equals("Stop a Container")) {
+                List<String> containerNames = getContainersByStatus(DOCKER_RUNNING, DOCKER_NAMES); // Fetch container names
+                List<String> containerId = getContainersByStatus(DOCKER_RUNNING, DOCKER_ID);
+
+                if (!containerNames.isEmpty()) {
+                    String selectedContainer = (String) JOptionPane.showInputDialog(
+                            this,
+                            "Choose a container to stop:",
+                            "Select Container",
+                            JOptionPane.PLAIN_MESSAGE,
+                            null,
+                            containerNames.toArray(new String[0]),
+                            containerNames.get(0));
+                        
+    
+                    int selectedIndex = containerNames.indexOf(selectedContainer);
+                    if (selectedIndex != -1 && !containerNames.isEmpty() && !containerId.isEmpty()) {
+                        String selectedContainerId2 = containerId.get(selectedIndex);
+                        StopContainer.stopDockerContainer(selectedContainerId2);
+                        JOptionPane.showMessageDialog(this, "Exiting container: " + selectedContainer);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Container ID not found for the selected container.");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "No running containers found.");
+                }
             } else {
-                JOptionPane.showMessageDialog(this, "Selected: " + selectedChoice);
+              JOptionPane.showMessageDialog(this, "Selected: " + selectedChoice);
             }
         }
     }
@@ -102,11 +167,15 @@ public class DockerDesktopApp extends JFrame {
         });
     }
 
-     private List<String> getContainerNames() {
-        List<String> containerNames = new ArrayList<>();
+    /**Method that returns the A List of the elements that the user asks for. For example a user
+     * can give status running and element id and the method will return the Id's of all running containers 
+     * in their localhost.
+     */
+    private List<String> getContainersByStatus(String status, String element) {
+        List<String> containerInfo = new ArrayList<>();
 
         try {
-            URL url = new URL("http://localhost:2375/containers/json");
+            URL url = new URL("http://localhost:2375/containers/json?filters={%22status%22:[%22" + status + "%22]}");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
@@ -122,68 +191,31 @@ public class DockerDesktopApp extends JFrame {
                 reader.close();
 
                 try {
-
-                JSONArray jsonArray = new JSONArray(response.toString());
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject container = jsonArray.getJSONObject(i);
-                    JSONArray namesArray = container.getJSONArray("Names");
-                    for (int j = 0; j < namesArray.length(); j++) {
-                    String name = namesArray.getString(j);
-                    containerNames.add(name);
+                    JSONArray jsonArray = new JSONArray(response.toString());
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject container = jsonArray.getJSONObject(i);
+                        if (element.equals("Id")) {
+                            String id = container.getString("Id");
+                            containerInfo.add(id);
+                        } else {
+                            JSONArray namesArray = container.getJSONArray("Names");
+                            for (int j = 0; j < namesArray.length(); j++) {
+                                String name = namesArray.getString(j);
+                                containerInfo.add(name);
+                            }
+                        }
                     }
-                }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             } else {
-                System.out.println("Failed to fetch containers. Response code: " + responseCode);
+                System.out.println("Failed to fetch containers with status '" + status + "'. Response code: " + responseCode);
             }
             connection.disconnect();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return containerNames;
-    }
-
-    private List<String> getContainerId() {
-        List<String> containerId = new ArrayList<>();
-
-        try {
-            URL url = new URL("http://localhost:2375/containers/json");
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
-
-            int responseCode = connection.getResponseCode();
-
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                StringBuilder response = new StringBuilder();
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    response.append(line);
-                }
-                reader.close();
-
-                try {
-
-                JSONArray jsonArray = new JSONArray(response.toString());
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject container = jsonArray.getJSONObject(i);
-                    String id = container.getString("Id");
-                    containerId.add(id);
-                }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                System.out.println("Failed to fetch containers. Response code: " + responseCode);
-            }
-            connection.disconnect();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return containerId;
+        return containerInfo;
     }
 }
