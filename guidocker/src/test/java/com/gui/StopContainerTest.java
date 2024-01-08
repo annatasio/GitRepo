@@ -26,19 +26,19 @@ public class StopContainerTest {
 
     @Test
     public void testStopDockerContainer() throws IOException {
-        String id = "d2b8efcd5610dcaf762fe4e1471b4a397142e3cc669b912b6c2606deef7dfe4b";
+        String id = "d06bf50e943500636ddf1fec3ee9833b457e2b5c277b2bbeb9882ce92eba9144";
 
         when(mockConnection.getResponseCode()).thenReturn(HttpURLConnection.HTTP_NO_CONTENT);
         when(mockConnection.getOutputStream()).thenReturn(null);
         when(mockConnection.getResponseMessage()).thenReturn("OK");
-        doReturn(mockConnection).when(mockConnection); 
+        //doReturn(mockConnection).when(mockConnection); 
 
         HttpURLConnection.setFollowRedirects(false);
-        RestartContainer.restartDockerContainer(id);
+        StopContainer.stopDockerContainer(id);
 
         List<String> l = DockerDesktopApp.getContainersByStatus("exited", "Id");
         for(int i=0; i < l.size(); i++) {
-            if(l.get(i).equals("d2b8efcd5610dcaf762fe4e1471b4a397142e3cc669b912b6c2606deef7dfe4b")) {
+            if(l.get(i).equals("d06bf50e943500636ddf1fec3ee9833b457e2b5c277b2bbeb9882ce92eba9144")) {
                 assertTrue(true);
             } else {
                 assertFalse(false);

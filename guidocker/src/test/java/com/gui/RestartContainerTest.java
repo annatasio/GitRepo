@@ -30,7 +30,7 @@ public class RestartContainerTest {
         when(mockConnection.getResponseCode()).thenReturn(HttpURLConnection.HTTP_NO_CONTENT);
         when(mockConnection.getOutputStream()).thenReturn(null);
         when(mockConnection.getResponseMessage()).thenReturn("OK");
-        doReturn(mockConnection).when(mockConnection); 
+        //doReturn(mockConnection).when(mockConnection); 
 
         HttpURLConnection.setFollowRedirects(false);
         RestartContainer.restartDockerContainer(id);

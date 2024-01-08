@@ -25,19 +25,19 @@ public class StartContainerTest {
 
     @Test
     public void testStartDockerContainer() throws IOException {
-        String id = "d2b8efcd5610dcaf762fe4e1471b4a397142e3cc669b912b6c2606deef7dfe4b";
+        String id = "f713c3561c94c2a4b5d370122a188cc0a957216671ceb0b696862c19f658821c";
 
         when(mockConnection.getResponseCode()).thenReturn(HttpURLConnection.HTTP_NO_CONTENT);
         when(mockConnection.getOutputStream()).thenReturn(null);
         when(mockConnection.getResponseMessage()).thenReturn("OK");
-        doReturn(mockConnection).when(mockConnection); 
+        //doReturn(mockConnection).when(mockConnection); 
 
         HttpURLConnection.setFollowRedirects(false);
-        RestartContainer.restartDockerContainer(id);
+        StartContainer.startDockerContainer(id);
 
         List<String> l = DockerDesktopApp.getContainersByStatus("running", "Id");
         for(int i=0; i < l.size(); i++) {
-            if(l.get(i).equals("d2b8efcd5610dcaf762fe4e1471b4a397142e3cc669b912b6c2606deef7dfe4b")) {
+            if(l.get(i).equals("f713c3561c94c2a4b5d370122a188cc0a957216671ceb0b696862c19f658821c")) {
                 assertTrue(true);
             } else {
                 assertFalse(false);

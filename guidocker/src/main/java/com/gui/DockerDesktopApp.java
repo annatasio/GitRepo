@@ -154,6 +154,29 @@ public class DockerDesktopApp extends JFrame {
                 } else {
                     JOptionPane.showMessageDialog(this, "No running containers found.");
                 }
+
+            } else if (selectedChoice.equals("Show All Running Containers")) {
+                String running = null;
+                for (String container : RunningContainers.runningContainers()) {
+                    if (running == null) {
+                    running = container;
+                    } else {
+                        running = running + "\n\n" + container;
+                    }
+                }
+                JOptionPane.showMessageDialog(this, "Running Containers:\n\n" + running);
+            
+            } else if (selectedChoice.equals("Show All Paused Containers")) {
+                String paused = null;
+                for (String container : PausedContainers.pausedContainers()) {
+                    if (paused == null) {
+                    paused = container;
+                    } else {
+                        paused = paused + "\n\n" + container;
+                    }
+                }
+                JOptionPane.showMessageDialog(this, "Paused Containers:\n\n" + paused);
+                
             } else {
               JOptionPane.showMessageDialog(this, "Selected: " + selectedChoice);
             }
@@ -219,3 +242,4 @@ public class DockerDesktopApp extends JFrame {
         return containerInfo;
     }
 }
+

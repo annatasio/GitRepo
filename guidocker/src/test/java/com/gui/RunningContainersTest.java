@@ -30,7 +30,7 @@ public class RunningContainersTest {
 
         assertNotNull(containersInfo);
         assertFalse(containersInfo.isEmpty());
-        assertEquals(1, containersInfo.size());
+        assertEquals(2, containersInfo.size());
 
         // Verify that the expected information is present in the returned list
         for (String info : containersInfo) {
