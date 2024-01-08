@@ -1,0 +1,5 @@
+com\gui\RestartContainerTest.class
+com\gui\StopContainerTest.class
+com\gui\StartContainerTest.class
+com\gui\PausedContainersTest.class
+com\gui\RunningContainersTest.class

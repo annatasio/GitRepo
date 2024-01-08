@@ -1,0 +1,6 @@
+com\gui\PausedContainers.class
+com\gui\DockerDesktopApp.class
+com\gui\RestartContainer.class
+com\gui\RunningContainers.class
+com\gui\StartContainer.class
+com\gui\StopContainer.class
