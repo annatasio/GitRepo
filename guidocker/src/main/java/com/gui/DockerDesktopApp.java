@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 /**This is the main class that runs the GUI App. A User can have interaction
@@ -228,7 +227,7 @@ public class DockerDesktopApp extends JFrame {
                             }
                         }
                     }
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             } else {

@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public class PausedContainers {
@@ -54,7 +53,7 @@ public class PausedContainers {
 
                     containersInfo.add(containerInfo);
                 }
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             } else {

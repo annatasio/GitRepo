@@ -9,7 +9,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public class RunningContainers {
@@ -55,7 +54,7 @@ public class RunningContainers {
 
                     containersInfo.add(containerInfo);
                 }
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             } else {

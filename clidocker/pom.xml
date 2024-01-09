@@ -16,6 +16,7 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <jdk.version>1.8</jdk.version>
   </properties>
 
 <dependencies>
@@ -127,6 +128,7 @@
         <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-shade-plugin</artifactId>
+    <version>3.5.1</version>
     <executions>
         <execution>
             <goals>
@@ -140,6 +142,17 @@
                         <mainClass>mainPackage.Main2</mainClass>
                 </transformer>
             </transformers>
+            <filters>
+        <filter>
+            <artifact>*:*</artifact>
+            <excludes>
+                <exclude>META-INF/*.SF</exclude>
+                <exclude>META-INF/*.DSA</exclude>
+                <exclude>META-INF/*.RSA</exclude>
+            </excludes>
+        </filter>
+    </filters>
+    <!-- Additional configuration. -->
         </configuration>
         </execution>
     </executions>

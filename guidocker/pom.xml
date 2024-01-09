@@ -15,8 +15,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <jdk.version>1.8</jdk.version>
   </properties>
 
   <dependencies>
@@ -32,6 +33,12 @@
 	  <artifactId>junit-jupiter-engine</artifactId>
 	  <version>5.2.0</version>
 	  <scope>test</scope>
+    </dependency>
+
+    <dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20231013</version>
     </dependency>
 
     <dependency>
@@ -97,6 +104,7 @@
           <configuration>
           <archive>
             <manifest>
+              <addClasspath>true</addClasspath>
               <mainClass>com.gui.DockerDesktopApp</mainClass> <!-- Specify your main class here -->
             </manifest>
           </archive>
@@ -144,6 +152,11 @@
           <version>3.0.0</version>
         </plugin>
         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>3.1.0</version> <!-- Update to the latest version -->
+        </plugin>
+        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
           <version>3.1.1</version>
@@ -171,6 +184,38 @@
                 </execution>
             </executions>
         </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.5.1</version>
+            <executions>
+            <execution>
+            <goals>
+                <goal>shade</goal>
+            </goals>
+            <configuration>
+                <shadedArtifactAttached>true</shadedArtifactAttached>
+                <transformers>
+                    <transformer implementation=
+                      "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                        <mainClass>com.gui.DokckerDesktopApp</mainClass>
+                </transformer>
+            </transformers>
+            <filters>
+            <filter>
+            <artifact>*:*</artifact>
+            <excludes>
+                <exclude>META-INF/*.SF</exclude>
+                <exclude>META-INF/*.DSA</exclude>
+                <exclude>META-INF/*.RSA</exclude>
+            </excludes>
+            </filter>
+            </filters>
+    <!-- Additional configuration. -->
+        </configuration>
+        </execution>
+        </executions>
+     </plugin>
       </plugins>
     </pluginManagement>
   </build>
