@@ -1,0 +1,88 @@
+Date : 2024-01-09 18:29:36
+Directory : c:\Users\annat\GitRepo\clidocker
+Total : 40 files,  2020 codes, 118 comments, 296 blanks, all 2434 lines
+
+Languages
++-----------------+------------+------------+------------+------------+------------+
+| language        | files      | code       | comment    | blank      | total      |
++-----------------+------------+------------+------------+------------+------------+
+| Java            |         25 |      1,238 |        107 |        263 |      1,608 |
+| XML             |          7 |        763 |          2 |         17 |        782 |
+| SQL             |          2 |         10 |          8 |         10 |         28 |
+| Markdown        |          5 |          6 |          0 |          5 |         11 |
+| Java Properties |          1 |          3 |          1 |          1 |          5 |
++-----------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                  | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                     |         40 |      2,020 |        118 |        296 |      2,434 |
+| . (Files)                                                                                             |          2 |        311 |          2 |         17 |        330 |
+| src                                                                                                   |         15 |        724 |        111 |        266 |      1,101 |
+| src\main                                                                                              |          8 |        469 |         82 |        180 |        731 |
+| src\main\java                                                                                         |          6 |        463 |         78 |        174 |        715 |
+| src\main\java\mainPackage                                                                             |          6 |        463 |         78 |        174 |        715 |
+| src\main\resources                                                                                    |          2 |          6 |          4 |          6 |         16 |
+| src\test                                                                                              |          7 |        255 |         29 |         86 |        370 |
+| src\test (Files)                                                                                      |          1 |          2 |          0 |          1 |          3 |
+| src\test\java                                                                                         |          5 |        252 |         29 |         84 |        365 |
+| src\test\java\mainPackage                                                                             |          5 |        252 |         29 |         84 |        365 |
+| src\test\resources                                                                                    |          1 |          1 |          0 |          1 |          2 |
+| target                                                                                                |         23 |        985 |          5 |         13 |      1,003 |
+| target\classes                                                                                        |          9 |        360 |          4 |         10 |        374 |
+| target\classes (Files)                                                                                |          2 |          6 |          4 |          6 |         16 |
+| target\classes\mainPackage                                                                            |          7 |        354 |          0 |          4 |        358 |
+| target\maven-archiver                                                                                 |          1 |          3 |          1 |          1 |          5 |
+| target\surefire-reports                                                                               |          5 |        452 |          0 |          0 |        452 |
+| target\test-classes                                                                                   |          8 |        170 |          0 |          2 |        172 |
+| target\test-classes (Files)                                                                           |          1 |          1 |          0 |          1 |          2 |
+| target\test-classes\mainPackage                                                                       |          7 |        169 |          0 |          1 |        170 |
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------+-----------------+------------+------------+------------+------------+
+| filename                                                                                              | language        | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------+-----------------+------------+------------+------------+------------+
+| c:\Users\annat\GitRepo\clidocker\dependency-reduced-pom.xml                                           | XML             |        150 |          0 |          1 |        151 |
+| c:\Users\annat\GitRepo\clidocker\pom.xml                                                              | XML             |        161 |          2 |         16 |        179 |
+| c:\Users\annat\GitRepo\clidocker\src\main\java\mainPackage\Containers.java                            | Java            |         63 |          7 |         15 |         85 |
+| c:\Users\annat\GitRepo\clidocker\src\main\java\mainPackage\DBThread.java                              | Java            |         78 |         17 |         22 |        117 |
+| c:\Users\annat\GitRepo\clidocker\src\main\java\mainPackage\DockerStatistics.java                      | Java            |         52 |         13 |         23 |         88 |
+| c:\Users\annat\GitRepo\clidocker\src\main\java\mainPackage\Dockerpr.java                              | Java            |         63 |          8 |         31 |        102 |
+| c:\Users\annat\GitRepo\clidocker\src\main\java\mainPackage\Main2.java                                 | Java            |         96 |         10 |         50 |        156 |
+| c:\Users\annat\GitRepo\clidocker\src\main\java\mainPackage\SQLServerRESTClient.java                   | Java            |        111 |         23 |         33 |        167 |
+| c:\Users\annat\GitRepo\clidocker\src\main\resources\Delete records and reset values.sql               | SQL             |          5 |          4 |          5 |         14 |
+| c:\Users\annat\GitRepo\clidocker\src\main\resources\README.md                                         | Markdown        |          1 |          0 |          1 |          2 |
+| c:\Users\annat\GitRepo\clidocker\src\test\READM.md                                                    | Markdown        |          2 |          0 |          1 |          3 |
+| c:\Users\annat\GitRepo\clidocker\src\test\java\mainPackage\ContainersTest.java                        | Java            |         42 |          6 |         13 |         61 |
+| c:\Users\annat\GitRepo\clidocker\src\test\java\mainPackage\DBThreadTest.java                          | Java            |         45 |          5 |         13 |         63 |
+| c:\Users\annat\GitRepo\clidocker\src\test\java\mainPackage\DockerStatisticsTest.java                  | Java            |         69 |          6 |         21 |         96 |
+| c:\Users\annat\GitRepo\clidocker\src\test\java\mainPackage\DockerprTest.java                          | Java            |         63 |          6 |         22 |         91 |
+| c:\Users\annat\GitRepo\clidocker\src\test\java\mainPackage\SQLServerRESTClientTest.java               | Java            |         33 |          6 |         15 |         54 |
+| c:\Users\annat\GitRepo\clidocker\src\test\resources\README.md                                         | Markdown        |          1 |          0 |          1 |          2 |
+| c:\Users\annat\GitRepo\clidocker\target\classes\Delete records and reset values.sql                   | SQL             |          5 |          4 |          5 |         14 |
+| c:\Users\annat\GitRepo\clidocker\target\classes\README.md                                             | Markdown        |          1 |          0 |          1 |          2 |
+| c:\Users\annat\GitRepo\clidocker\target\classes\mainPackage\Containers.class                          | Java            |         41 |          0 |          0 |         41 |
+| c:\Users\annat\GitRepo\clidocker\target\classes\mainPackage\DBThread.class                            | Java            |         86 |          0 |          3 |         89 |
+| c:\Users\annat\GitRepo\clidocker\target\classes\mainPackage\DockerStatistics.class                    | Java            |         42 |          0 |          0 |         42 |
+| c:\Users\annat\GitRepo\clidocker\target\classes\mainPackage\Dockerpr.class                            | Java            |         43 |          0 |          0 |         43 |
+| c:\Users\annat\GitRepo\clidocker\target\classes\mainPackage\Main2.class                               | Java            |         66 |          0 |          1 |         67 |
+| c:\Users\annat\GitRepo\clidocker\target\classes\mainPackage\SQLServerRESTClient$DataHandler.class     | Java            |         33 |          0 |          0 |         33 |
+| c:\Users\annat\GitRepo\clidocker\target\classes\mainPackage\SQLServerRESTClient.class                 | Java            |         43 |          0 |          0 |         43 |
+| c:\Users\annat\GitRepo\clidocker\target\maven-archiver\pom.properties                                 | Java Properties |          3 |          1 |          1 |          5 |
+| c:\Users\annat\GitRepo\clidocker\target\surefire-reports\TEST-mainPackage.ContainersTest.xml          | XML             |         75 |          0 |          0 |         75 |
+| c:\Users\annat\GitRepo\clidocker\target\surefire-reports\TEST-mainPackage.DBThreadTest.xml            | XML             |         62 |          0 |          0 |         62 |
+| c:\Users\annat\GitRepo\clidocker\target\surefire-reports\TEST-mainPackage.DockerStatisticsTest.xml    | XML             |        124 |          0 |          0 |        124 |
+| c:\Users\annat\GitRepo\clidocker\target\surefire-reports\TEST-mainPackage.DockerprTest.xml            | XML             |        123 |          0 |          0 |        123 |
+| c:\Users\annat\GitRepo\clidocker\target\surefire-reports\TEST-mainPackage.SQLServerRESTClientTest.xml | XML             |         68 |          0 |          0 |         68 |
+| c:\Users\annat\GitRepo\clidocker\target\test-classes\README.md                                        | Markdown        |          1 |          0 |          1 |          2 |
+| c:\Users\annat\GitRepo\clidocker\target\test-classes\mainPackage\ContainersTest.class                 | Java            |         31 |          0 |          0 |         31 |
+| c:\Users\annat\GitRepo\clidocker\target\test-classes\mainPackage\DBThreadTest.class                   | Java            |         25 |          0 |          0 |         25 |
+| c:\Users\annat\GitRepo\clidocker\target\test-classes\mainPackage\DockerStatisticsTest$1.class         | Java            |         13 |          0 |          0 |         13 |
+| c:\Users\annat\GitRepo\clidocker\target\test-classes\mainPackage\DockerStatisticsTest$2.class         | Java            |         13 |          0 |          0 |         13 |
+| c:\Users\annat\GitRepo\clidocker\target\test-classes\mainPackage\DockerStatisticsTest.class           | Java            |         30 |          0 |          0 |         30 |
+| c:\Users\annat\GitRepo\clidocker\target\test-classes\mainPackage\DockerprTest.class                   | Java            |         28 |          0 |          1 |         29 |
+| c:\Users\annat\GitRepo\clidocker\target\test-classes\mainPackage\SQLServerRESTClientTest.class        | Java            |         29 |          0 |          0 |         29 |
+| Total                                                                                                 |                 |      2,020 |        118 |        296 |      2,434 |
++-------------------------------------------------------------------------------------------------------+-----------------+------------+------------+------------+------------+
