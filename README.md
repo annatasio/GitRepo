@@ -40,7 +40,12 @@ HOW TO SET UP THE DATABASE ON YOUR COMPUTER
 8. The database must have been created succesfully
 
 A FEW WORDS FOR THE STRUCTURE
-1. 
+1. This app uses external library "docker-java" for connection with docker daemon and performimg actions about docker containers
+2. Threads have been created for start or stop execution, statitics and DB connection
+3. We also created a simple REST API for connection with the database and get the serial number of metric
+4. MAVEN build tool has been used for compilation and creation of the final jar file
+5. CHECKSTYLE helped us with our errors, peroformamve and appearance of our app
+6. We created J-UNIT tests for testing our methods that they work properly
 
 INSTRUCTIONS FOR PACKAGE "guidocker"
 1. At CMD, move into the the project folder named "guidocker", where the pom.xml is
