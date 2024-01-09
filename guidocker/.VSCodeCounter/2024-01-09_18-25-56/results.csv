@@ -1,0 +1,30 @@
+"filename", "language", "Java", "XML", "Java Properties", "comment", "blank", "total"
+"c:\Users\annat\GitRepo\guidocker\dependency-reduced-pom.xml", "XML", 0, 204, 0, 0, 1, 205
+"c:\Users\annat\GitRepo\guidocker\pom.xml", "XML", 0, 217, 0, 5, 17, 239
+"c:\Users\annat\GitRepo\guidocker\src\main\java\com\gui\DockerDesktopApp.java", "Java", 196, 0, 0, 11, 38, 245
+"c:\Users\annat\GitRepo\guidocker\src\main\java\com\gui\PausedContainers.java", "Java", 52, 0, 0, 4, 13, 69
+"c:\Users\annat\GitRepo\guidocker\src\main\java\com\gui\RestartContainer.java", "Java", 23, 0, 0, 4, 7, 34
+"c:\Users\annat\GitRepo\guidocker\src\main\java\com\gui\RunningContainers.java", "Java", 52, 0, 0, 4, 15, 71
+"c:\Users\annat\GitRepo\guidocker\src\main\java\com\gui\StartContainer.java", "Java", 23, 0, 0, 4, 8, 35
+"c:\Users\annat\GitRepo\guidocker\src\main\java\com\gui\StopContainer.java", "Java", 23, 0, 0, 4, 8, 35
+"c:\Users\annat\GitRepo\guidocker\src\test\java\com\gui\PausedContainersTest.java", "Java", 31, 0, 0, 1, 11, 43
+"c:\Users\annat\GitRepo\guidocker\src\test\java\com\gui\RestartContainerTest.java", "Java", 36, 0, 0, 1, 13, 50
+"c:\Users\annat\GitRepo\guidocker\src\test\java\com\gui\RunningContainersTest.java", "Java", 31, 0, 0, 1, 14, 46
+"c:\Users\annat\GitRepo\guidocker\src\test\java\com\gui\StartContainerTest.java", "Java", 36, 0, 0, 1, 13, 50
+"c:\Users\annat\GitRepo\guidocker\src\test\java\com\gui\StopContainerTest.java", "Java", 37, 0, 0, 1, 11, 49
+"c:\Users\annat\GitRepo\guidocker\target\classes\com\gui\DockerDesktopApp.class", "Java", 118, 0, 0, 0, 4, 122
+"c:\Users\annat\GitRepo\guidocker\target\classes\com\gui\PausedContainers.class", "Java", 44, 0, 0, 0, 0, 44
+"c:\Users\annat\GitRepo\guidocker\target\classes\com\gui\RestartContainer.class", "Java", 18, 0, 0, 0, 0, 18
+"c:\Users\annat\GitRepo\guidocker\target\classes\com\gui\RunningContainers.class", "Java", 44, 0, 0, 0, 0, 44
+"c:\Users\annat\GitRepo\guidocker\target\classes\com\gui\StartContainer.class", "Java", 18, 0, 0, 0, 0, 18
+"c:\Users\annat\GitRepo\guidocker\target\classes\com\gui\StopContainer.class", "Java", 18, 0, 0, 0, 0, 18
+"c:\Users\annat\GitRepo\guidocker\target\maven-archiver\pom.properties", "Java Properties", 0, 0, 3, 1, 1, 5
+"c:\Users\annat\GitRepo\guidocker\target\surefire-reports\TEST-com.gui.RestartContainerTest.xml", "XML", 0, 62, 0, 0, 0, 62
+"c:\Users\annat\GitRepo\guidocker\target\surefire-reports\TEST-com.gui.StartContainerTest.xml", "XML", 0, 62, 0, 0, 0, 62
+"c:\Users\annat\GitRepo\guidocker\target\surefire-reports\TEST-com.gui.StopContainerTest.xml", "XML", 0, 62, 0, 0, 0, 62
+"c:\Users\annat\GitRepo\guidocker\target\test-classes\com\gui\PausedContainersTest.class", "Java", 18, 0, 0, 0, 0, 18
+"c:\Users\annat\GitRepo\guidocker\target\test-classes\com\gui\RestartContainerTest.class", "Java", 25, 0, 0, 0, 0, 25
+"c:\Users\annat\GitRepo\guidocker\target\test-classes\com\gui\RunningContainersTest.class", "Java", 18, 0, 0, 0, 0, 18
+"c:\Users\annat\GitRepo\guidocker\target\test-classes\com\gui\StartContainerTest.class", "Java", 25, 0, 0, 0, 0, 25
+"c:\Users\annat\GitRepo\guidocker\target\test-classes\com\gui\StopContainerTest.class", "Java", 25, 0, 0, 0, 0, 25
+"Total", "-", 911, 607, 3, 42, 174, 1737
