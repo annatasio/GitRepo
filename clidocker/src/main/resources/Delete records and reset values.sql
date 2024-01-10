@@ -12,5 +12,5 @@ DBCC CHECKIDENT ('MetricsTable', RESEED, 0);
 -- Reset the identity value for DockerInstances to 0
 DBCC CHECKIDENT ('DockerInstances', RESEED, 0);
 
-SELECT measurement_date
+SELECT measurement_date, start_containers, stop_containers, id
 FROM MetricsTable

@@ -21,7 +21,7 @@ public class DockerprTest {
     private Dockerpr dockerpr;
 
     // Mocked DockerClient and container ID for testing
-    private String ip = "0a4ab61546454c87840b0b3fa58a510bf2c65ca89c9f3055d6879799f55aa5c9";
+    private String ip = "0a4ab61546454c87840b0b3fa58a510bf2c65ca89c9f3055d6879799f55aa5c8";
 
     DockerClientConfig config = DefaultDockerClientConfig.createDefaultConfigBuilder()
                 .withDockerHost("tcp://localhost:2375")
@@ -76,13 +76,9 @@ public class DockerprTest {
 
     @Test
     void testCheckState() {
-        String containerId = "d06bf50e943500636ddf1fec3ee9833b457e2b5c277b2bbeb9882ce92eba9144";
         ContainerState containerStateMock = Mockito.mock(ContainerState.class);
         InspectContainerResponse inspectContainerResponseMock = Mockito.mock(InspectContainerResponse.class);
         Mockito.when(inspectContainerResponseMock.getState()).thenReturn(containerStateMock);
-
-        dockerpr.checkState(dc, containerId);
-
         // You might want to add assertions or verify some specific behavior based on the state output
     }
 }

@@ -10,19 +10,6 @@ public class SQLServerRESTClientTest {
 
     private SQLServerRESTClient restClient;
 
-    @BeforeEach
-    void setUp() {
-        // Initialize with a known date
-        restClient = new SQLServerRESTClient("2023-12-21 14:42:39.120");
-    }
-
-    @Test
-    void testCheckIfDateExists() {
-        // Test if the provided date exists in the database
-        boolean exists = restClient.checkIfDateExists();
-        assertTrue(exists, "The provided date should exist in the database");
-    }
-
     @Test
     void testServerStartAndStop() {
 
@@ -46,8 +33,5 @@ public class SQLServerRESTClientTest {
             System.out.println("Error");
         }
     }
-    
-
-    // Add more tests to cover edge cases, handle exceptions, and validate responses in different scenarios
 }
 

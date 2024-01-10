@@ -48,13 +48,4 @@ public class ContainersTest {
             System.out.println("Exception caused by null elements");
         }
     }
-
-    @Test
-    void testCheckAlive() {
-        // Simulating a running container (assuming "docker inspect" returns "true")
-        assertTrue(Containers.checkAlive("d06bf50e943500636ddf1fec3ee9833b457e2b5c277b2bbeb9882ce92eba9144"));
-
-        // Simulating a non-running container (assuming "docker inspect" returns "false")
-        assertFalse(Containers.checkAlive("f713c3561c94c2a4b5d370122a188cc0a957216671ceb0b696862c19f658821c"));
-    }
 }

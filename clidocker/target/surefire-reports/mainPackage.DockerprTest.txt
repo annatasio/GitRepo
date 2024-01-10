@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: mainPackage.DockerprTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.76 s -- in mainPackage.DockerprTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.35 s -- in mainPackage.DockerprTest
