@@ -6,7 +6,7 @@ This is our project for the subject Programming II. It is about managing Docker 
 ## Instructions for Package "clidocker"
 
 1. Open CMD and navigate to the project folder named "clidocker" where the `pom.xml` is located.
-2. Compile the program with the command `mvn clean install shade:shade`.
+2. Compile the program with the command `mvn clean install`.
 3. Run the program with the command `java -jar clidocker-1.0-SNAPSHOT-shaded.jar` on CMD (move to the target folder first).
 4. It is necessary to have Apache Maven and JDK installed on your computer.
 
