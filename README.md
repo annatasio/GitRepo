@@ -6,7 +6,7 @@ This is our project for the subject Programming II. It is about managing Docker 
 ## Instructions for Package "clidocker"
 
 1. Open CMD and navigate to the project folder named "clidocker" where the `pom.xml` is located.
-2. Compile the program with the command `mvn clean install`.
+2. Compile the program with the command `mvn clean install shade:shade`.
 3. Run the program with the command `java -jar clidocker-1.0-SNAPSHOT-shaded.jar` on CMD (move to the target folder first).
 4. It is necessary to have Apache Maven and JDK installed on your computer.
 
@@ -20,6 +20,9 @@ Indicatively, the following must be done:
 - In class `DockerStatisticsTest.java`, replace in lines 54, 67, and 70 with a running container. Do the same in lines 57, 76, and 79.
 
 ## UML of "clidocker"
+
+![image](https://github.com/annatasio/GitRepo/assets/147800087/b42ef790-1836-45a7-a0be-0efbc5d78b4e)
+
 
 ### How to Use This App
 
@@ -53,15 +56,27 @@ Indicatively, the following must be done:
 ## Instructions for Package "guidocker"
 
 1. Open CMD and navigate to the project folder named "guidocker", where the `pom.xml` is located.
-2. Compile the program with the command `mvn clean install`.
+2. Compile the program with the command `mvn clean install shade:shade`.
 3. Run the program with a double click on the jar file named `guidocker-1.0-SNAPSHOT.jar` (inside the target folder) or
 4. Run the program via CMD, with the command `java -jar guidocker-1.0-SNAPSHOT.jar` (move to the target folder first).
 5. As before, it's is necessary to have Apache Maven and JDK installed on your computer.
 
 ## UML of "guidocker"
 
+![image](https://github.com/annatasio/GitRepo/assets/147800087/fbc7b9b5-26e7-42ed-a03d-64360dee7dcc)
+
+
 ### How to Use This Graphical App
 
 1. When the jar file opens, the name of the app and a button will appear. Press start.
 2. A menu will appear with several options regarding Docker engines and containers.
-3. Select one, and based on your choice, the app will enable you to start or stop a Docker container or view the running container.
+3. Select one, and based on your choice, the app will enable you to start or stop a Docker container or view the running containers.
+
+## A Few Words for the Structure
+
+- In this app has been incorporated a REST API that we created
+- This REST API connects with the localhoat on port 2375. The local docker daemon. In that way we have access to all of our containers and images
+- Maven build tool has been used for compilation and creation of the final jar file.
+- Checkstyle helped us with our errors, performance, and appearance of our app.
+- We created J-Unit tests for testing our methods that they work properly.
+
