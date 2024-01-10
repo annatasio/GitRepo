@@ -25,7 +25,7 @@ public class RestartContainerTest {
 
     @Test
     public void testRestartDockerContainer() throws IOException {
-        String id = "d2b8efcd5610dcaf762fe4e1471b4a397142e3cc669b912b6c2606deef7dfe4b";
+        String id = "d2b8efcd5610dcaf762fe4e1471b4a397142e3cc669b912b6c2606deef7dfe4c";
 
         when(mockConnection.getResponseCode()).thenReturn(HttpURLConnection.HTTP_NO_CONTENT);
         when(mockConnection.getOutputStream()).thenReturn(null);
@@ -37,7 +37,7 @@ public class RestartContainerTest {
 
         List<String> l = DockerDesktopApp.getContainersByStatus("running", "Id");
         for(int i=0; i < l.size(); i++) {
-            if(l.get(i).equals("d2b8efcd5610dcaf762fe4e1471b4a397142e3cc669b912b6c2606deef7dfe4b")) {
+            if(l.get(i).equals(id)) {
                 assertTrue(true);
             } else {
                 assertFalse(false);
