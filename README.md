@@ -9,6 +9,7 @@ This is our project for the subject Programming II. It is about managing Docker 
 2. Compile the program with the command `mvn clean install`.
 3. Run the program with the command `java -jar clidocker-1.0-SNAPSHOT-shaded.jar` on CMD (move to the target folder first).
 4. It is necessary to have Apache Maven and JDK installed on your computer.
+5. Your SQL driver must be configured for windows authentication and intergrated security
 
 **Important:** The app **will not run** if you do not adjust the J-Unit tests according to your computer.
 
