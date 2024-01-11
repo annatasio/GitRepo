@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.JSONException;
 
 /**This is the main class that runs the GUI App. A User can have interaction
  * with their docker containers and execute simple tasks like restarting a container.
@@ -227,7 +228,7 @@ public class DockerDesktopApp extends JFrame {
                             }
                         }
                     }
-                } catch (Exception e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             } else {
