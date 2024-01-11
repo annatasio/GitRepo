@@ -9,6 +9,7 @@ This is our project for the subject Programming II. It is about managing Docker 
 2. Compile the program with the command `mvn clean install`.
 3. Run the program with the command `java -jar clidocker-1.0-SNAPSHOT-shaded.jar` on CMD (move to the target folder first).
 4. It is necessary to have Apache Maven and JDK installed on your computer.
+5. Your SQL driver must be configured for windows authentication and intergrated security
 
 **Important:** The app **will not run** if you do not adjust the J-Unit tests according to your computer.
 
@@ -21,7 +22,7 @@ Indicatively, the following must be done:
 
 ## UML of "clidocker"
 
-![image](https://github.com/annatasio/GitRepo/assets/147800087/b42ef790-1836-45a7-a0be-0efbc5d78b4e)
+![Στιγμιότυπο οθόνης 2024-01-11 100704](https://github.com/annatasio/GitRepo/assets/147800087/135636cf-35db-49d4-87b6-f6cbca8c85c1)
 
 
 ### How to Use This App
@@ -63,7 +64,7 @@ Indicatively, the following must be done:
 
 ## UML of "guidocker"
 
-![image](https://github.com/annatasio/GitRepo/assets/147800087/fbc7b9b5-26e7-42ed-a03d-64360dee7dcc)
+![Στιγμιότυπο οθόνης 2024-01-11 100721](https://github.com/annatasio/GitRepo/assets/147800087/c0b0536d-5f2b-4b77-9c77-f010f07bb995)
 
 
 ### How to Use This Graphical App
