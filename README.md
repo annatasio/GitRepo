@@ -1,9 +1,9 @@
 # GitRepo 
 ### Project: Programming II - Docker Desktop Management
-## Academic Free License v. 3.0
-## Version 3.0
-## Submitter: Lawrence Rosen
-## SPDX short identifier: AFL-3.0
+Academic Free License v. 3.0
+Version 3.0
+Submitter: Lawrence Rosen
+SPDX short identifier: AFL-3.0
 
 This is our project for the subject Programming II. It is about managing Docker Desktop.
 
