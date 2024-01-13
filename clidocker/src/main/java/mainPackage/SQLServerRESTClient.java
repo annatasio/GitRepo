@@ -13,6 +13,10 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
+/**This class creates a rest API that starts a connection with server on port
+ * 8080. When you browse http://localhost:8080/data you get the serial number of 
+ * metric, the started and stoped containers in the date that you gave.
+ */
 public class SQLServerRESTClient {
 
     protected static String date;

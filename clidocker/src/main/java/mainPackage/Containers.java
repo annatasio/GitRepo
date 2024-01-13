@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 public class Containers {
 
     /**A method that lists all containers of docker engine
-     * Author: Anna Tasiopoulou 8220147 @param dockerClient, @param containers
+     * @param dockerClient, @param containers
      */
 
      public void list(DockerClient dockerClient, List<Container> containers) {

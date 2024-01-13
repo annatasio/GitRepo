@@ -14,9 +14,8 @@ import java.sql.Timestamp;
 import java.util.List;
 
 /**
- * Manages Docker-to-database interactions, inserting container metrics and updating records.
- * Author: Ioannis Varelis 8220009
- */
+ * Manages Docker-to-database interactions, inserting container metrics and updating records.*/
+
 public class DBThread {
 
     /**Method to insert Docker information into the database*/

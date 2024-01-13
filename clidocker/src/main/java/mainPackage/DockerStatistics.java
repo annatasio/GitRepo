@@ -7,9 +7,7 @@ import com.github.dockerjava.core.InvocationBuilder.AsyncResultCallback;
 
 import java.util.List;
 
-/**This DockerStatistics class refers to docker containers statistics
- * Author: Papagianni Georgia 8220115
- */
+/**This DockerStatistics class refers to docker containers statistics. */
 
 public class DockerStatistics {
     /**Variables for statistics */
