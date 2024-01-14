@@ -1,4 +1,5 @@
 # GitRepo 
+## Gen0 Programming Team 
 ### Project: Programming II - Docker Desktop Management
 ## Academic Free License v. 3.0
 Version 3.0
@@ -14,15 +15,6 @@ SPDX short identifier: AFL-3.0
 3. Run the program with the command `java -jar clidocker-1.0-SNAPSHOT-shaded.jar` on CMD (move to the target folder first).
 4. It is necessary to have Apache Maven and JDK installed on your computer.
 5. Your SQL driver must be configured for windows authentication and intergrated security
-
-**Important:** The app **will not run** if you do not adjust the J-Unit tests according to your computer.
-
-Indicatively, the following must be done:
-
-- In class `ContainersTest.java`, replace on lines 33 and 37 with images of Docker containers that you have. Also replace on line 55 with a container id that is running and on line 58 with a container id that is stopped.
-- In class `DbThreadTest.java`, replace in lines 30 and 31 with image and name of a running Docker container and in lines 37 and 38 with image and name of an exited Docker container.
-- In class `DockerprTest.java`, you must change with container id's of your computer. It does not matter if they are running or not.
-- In class `DockerStatisticsTest.java`, replace in lines 54, 67, and 70 with a running container. Do the same in lines 57, 76, and 79.
 
 ## UML of "clidocker"
 
