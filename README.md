@@ -1,7 +1,7 @@
 # GitRepo 
 ## Gen0 Programming Team 
 ### Project: Programming II - Docker Desktop Management
-## Promotional Video : https://we.tl/t-VAjCfdZ87M
+## Promotional Video : https://youtu.be/jYQkS1x5KNE
 ## Academic Free License v. 3.0
 Version 3.0
 Submitter: Lawrence Rosen
