@@ -12,10 +12,11 @@ SPDX short identifier: AFL-3.0
 ## Instructions for Package "clidocker"
 
 1. Open CMD and navigate to the project folder named "clidocker" where the `pom.xml` is located.
-2. Compile the program with the command `mvn clean install`.
-3. Run the program with the command `java -jar clidocker-1.0-SNAPSHOT-shaded.jar` on CMD (move to the target folder first).
-4. It is necessary to have Apache Maven and JDK installed on your computer.
-5. Your SQL driver must be configured for windows authentication and intergrated security
+2. Compile the program with the command `mvn compile`
+3. Build the program's jar with the command `mvn clean install`.
+4. Run the program with the command `java -jar clidocker-1.0-SNAPSHOT-shaded.jar` on CMD (move to the target folder first).
+5. It is necessary to have Apache Maven and JDK installed on your computer.
+6. Your SQL driver must be configured for windows authentication and intergrated security
 
 ## UML of "clidocker"
 
@@ -54,10 +55,11 @@ SPDX short identifier: AFL-3.0
 ## Instructions for Package "guidocker"
 
 1. Open CMD and navigate to the project folder named "guidocker", where the `pom.xml` is located.
-2. Compile the program with the command `mvn clean install shade:shade`.
-3. Run the program with a double click on the jar file named `guidocker-1.0-SNAPSHOT.jar` (inside the target folder) or
-4. Run the program via CMD, with the command `java -jar guidocker-1.0-SNAPSHOT.jar` (move to the target folder first).
-5. As before, it's is necessary to have Apache Maven and JDK installed on your computer.
+2. Compile the program with the command `mvn compile`
+3. Bild the program's jar with the command `mvn clean install shade:shade`.
+4. Run the program with a double click on the jar file named `guidocker-1.0-SNAPSHOT.jar` (inside the target folder) or
+5. Run the program via CMD, with the command `java -jar guidocker-1.0-SNAPSHOT.jar` (move to the target folder first).
+6. As before, it's is necessary to have Apache Maven and JDK installed on your computer.
 
 ## UML of "guidocker"
 
