@@ -17,5 +17,6 @@ public class Main {
 		System.out.println("Konstantinos Lekkas, 8220077");
 		System.out.println("Antonis Psaltopoulos, 8220170");
 		System.out.println("Georgia Damasioti, 8210229");
+		System.out.println("Alexandros Manou, 8190296");
 	}
 }
